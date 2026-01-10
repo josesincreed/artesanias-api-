@@ -18,7 +18,8 @@ public class CorsConfig {
         // Orígenes permitidos (tu frontend local y tu dominio en producción)
         config.setAllowedOrigins(List.of(
                 "http://localhost:3000",
-                "https://tu-dominio-frontend.com"
+                "https://tu-dominio-frontend.com",
+                "http://ALB-Ecs-API-artesanias-1720835229.us-east-1.elb.amazonaws.com"
         ));
 
         // Métodos HTTP permitidos
