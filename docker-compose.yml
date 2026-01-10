@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  artesanias-api:
+    image: artesanias-api
+    container_name: artesanias-api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    restart: always
