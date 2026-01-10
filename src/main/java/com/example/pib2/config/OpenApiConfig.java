@@ -17,7 +17,7 @@ import java.util.List;
 @Configuration
 public class OpenApiConfig {
 
-    @Value("El Arte de Vivir")
+    @Value("El Arte de Vivir API")
     private String applicationName;
 
     @Value("${server.port:8080}")
