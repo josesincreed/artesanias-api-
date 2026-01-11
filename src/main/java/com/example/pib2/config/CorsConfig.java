@@ -15,23 +15,22 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Orígenes permitidos (tu frontend local y tu dominio en producción)
+        // 🔹 Orígenes permitidos
         config.setAllowedOrigins(List.of(
-                "http://localhost:3000",
-                "https://tu-dominio-frontend.com",
-                "http://ALB-Ecs-API-artesanias-1720835229.us-east-1.elb.amazonaws.com"
+                "http://localhost:3000", // Frontend local
+                "http://ALB-Ecs-API-artesanias-1720835229.us-east-1.elb.amazonaws.com" // ALB HTTP
         ));
 
-        // Métodos HTTP permitidos
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH" ,"OPTIONS"));
+        // 🔹 Métodos HTTP permitidos
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
 
-        // Headers permitidos
+        // 🔹 Headers permitidos
         config.setAllowedHeaders(List.of("*"));
 
-        // Permitir credenciales (cookies, auth headers, etc.)
+        // 🔹 Permitir credenciales (cookies, auth headers, etc.)
         config.setAllowCredentials(true);
 
-        // Registrar configuración para todas las rutas
+        // 🔹 Registrar configuración para todas las rutas
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
 
